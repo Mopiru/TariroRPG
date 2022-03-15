@@ -1,0 +1,7 @@
+Journal:
+  KillSomeGazania_start:
+    fr: "Va tué quelques Gazania, elle sont de partout!"
+  KillSomeGazania_done:
+    fr: "Va voir Odrek pour te faire payé"
+  killSomeGazania_paid:
+    fr: "Tué quelques Gazania: Terminé"

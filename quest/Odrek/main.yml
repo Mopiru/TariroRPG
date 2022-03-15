@@ -1,0 +1,13 @@
+npcs:
+  '1': Odrek
+journal_main_page:
+  gazaniaStarted:
+    priority: 1
+    text:
+      fr: 'Tue 10 Gazania !'
+    conditions: 'questStarted'
+  gazaniaDone:
+    priority: 1
+    text:
+      fr: 'Parle à Odrek'
+    conditions: 'questDone'

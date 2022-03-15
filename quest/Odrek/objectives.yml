@@ -1,0 +1,6 @@
+objectives:
+  kill10Gazania: 'mmobkill Gazania amount:10 events:spiderGazaniaDone'
+  talkToOdrekGazania: 'interact right Odrek 1 condition:questDone event:GazaniaFinish'
+
+  kill10Neva: 'mmobkill Neva amount:10 events:spiderNevaDone'
+  talkToOdrekNeva: 'interact right Odrek 1 condition:questDone event:NevaFinish'

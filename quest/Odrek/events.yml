@@ -1,0 +1,38 @@
+events:
+  questAddStarted: 'tag add questStarted'
+  questDelStarted: 'tag del questStarted'
+  questAddDone: 'tag add questDone'
+  questDelDone: 'tag del questDone'
+  questAddFinish: 'tag add questFinish'
+  questDelFinish: 'tag del questFinish'
+  
+  spiderGazaniaStart: 'folder spiderGazaniaStartNotify, spiderGazaniaStartObjective, questAddStarted, spiderGazaniaAddTag'
+  spiderGazaniaAddTag: 'tag add gazaniaQuest'
+  spiderGazaniaStartObjective: 'objective start kill10Gazania'
+  spiderGazaniaStartNotify: 'Quête Commencé: Tue des Gazanias'
+  
+  spiderGazaniaDone: 'folder spiderGazaniaDoneNotify, spiderGazaniaDoneObjective, questAddDone, questDelStarted'
+  spiderGazaniaDoneObjective: 'objective start talkToOdrekGazania'
+  spiderGazaniaDoneNotify: 'Quête en cour: Retourne parler à Odrek.'
+
+  spiderGazaniaFinish: 'folder spiderGazaniaFinishNotify, giveHunter30Xp, giveHunter50Money, questDelDone, spiderGazaniaDelTag'
+  spiderGazaniaFinishNotify: 'Quête finit: Tu as finit la qête.'
+  spiderGazaniaDelTag: 'tag del gazaniaQuest'
+  giveHunter30Xp: 'mmocoreprofessionexperence hunting 30'
+  giveHunter50Money: 'money +50'
+
+  
+
+
+  spiderNevaStart: 'folder spiderNevaStartNotify, spiderNevaStartObjective, questAddStarted, spiderNevaAddTag'
+  spiderNevaAddTag: 'tag add nevaQuest'
+  spiderNevaStartObjective: 'objective start kill10Neva'
+  spiderNevaStartNotify: 'Quête Commencé: Tue des Nevas'
+  
+  spiderNevaDone: 'folder spiderNevaDoneNotify, spiderNevaDoneObjective, questAddDone, questDelStarted'
+  spiderNevaDoneObjective: 'objective start talkToOdrekNeva'
+  spiderNevaDoneNotify: 'Quête en cour: Retourne parler à Odrek.'
+
+  spiderNevaFinish: 'folder spiderNevaFinishNotify, giveHunter30Xp, giveHunter50Money, questDelDone, spiderNevaDelTag'
+  spiderNevaFinishNotify: 'Quête finit: Tu as finit la qête.'
+  spiderNevaDelTag: 'tag del nevaQuest'

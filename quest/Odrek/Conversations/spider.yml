@@ -1,0 +1,43 @@
+Conversation:
+  Spider:
+    first: listeSpiderQuete, gazaniaFinish, NevaFinish
+    NPC_options: 
+      listeSpiderQuete:
+        text: "Tu veux chasser des Spider! Et quel espèce t'interesse ?"
+        pointers: gazaniaQuete, NevaQuete, NarcaQuete
+        condition: '!queteStarted', '!questDone'
+      gazaniaBegin:
+        text: "Des gazania trés bien, il y a un nid au nord de Néré, tu en 10 ça devrais les calmer!"
+        pointers: ok
+        event: spiderGazaniaStart
+      nevaBegin:
+        text: "Des Neva trés bien, il y a un nid au nord de Néré, tu en 10 ça devrais les calmer!"
+        pointers: ok
+        event: spiderNevaStart
+      narcaBegin:
+        text: "Des narca trés bien, il y a un nid au nord de Néré, tu en 10 ça devrais les calmer!"
+        pointers: ok
+      gazaniaFinish:
+        text: "Merci d'avoir tué ces Gazanias pour moi, voici de l'argent bien mérité!"
+        pointers: aurevoir
+        event: spiderGazaniaFinish
+        condition: gazaniaQuest, questDone
+      nevaFinish:
+        text: "Merci d'avoir tué ces Nevas pour moi, voici de l'argent bien mérité!"
+        pointers: aurevoir
+        event: spiderNevaFinish
+        condition: nevaQuest, questDone
+    player_options:
+      gazaniaQuete:
+        text: "Je me battre contre des Gazanias!"
+        pointers: gazaniaBegin
+      nevaQuete:
+        text: "Je me battre contre des Nevas!"
+        pointers: nevaBegin
+      narcaQuete:
+        text: "Je me battre contre des Narcas!"
+        pointers: narcaBegin
+      ok:
+        text: "C'est parti !"
+      aurevoir:
+        text: "Merci aurevoir Odrek!"

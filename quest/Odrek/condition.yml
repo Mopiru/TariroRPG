@@ -1,0 +1,4 @@
+conditions:
+  huntingLv1: 'mmoprofession hunting 0'
+  huntingLv5: 'mmoprofession hunting 5'
+  huntingLv10: 'mmoprofession hunting 10'

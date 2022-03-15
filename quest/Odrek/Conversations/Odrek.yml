@@ -1,0 +1,28 @@
+Conversation:
+  Odrek:
+    Quester: "Odrek"
+    first: bonjour, conversation.Spider, questOnlyStarted
+    NPC_options:
+      bonjour:
+        text: "Bien le bonjour, si tu veux gagné de l'experience dans la chasse je peut t'aider !"
+        pointers: ouiListeQuete, non
+        condition: '!queteStarted', '!questDone'
+      questOnlyStarted:
+        text: "Reviens me voir quad tu auras chassé ce que je t'ai demandé !"
+        pointer: ok
+        condition: questStarted
+      listeQuete:
+        text: "Quel type de créature veux tu chasser ?" 
+        pointers: chasseSpider
+    player_options:
+      ouiListeQuete:
+        text: "Je m'enuie, et je voudrai bien chasser un peu !"
+        pointers: listeQuete
+      non:
+        text: "Non merci."
+      chasseSpider:
+        text: "Je voudrai chasser des Spiders."
+        pointers: conversation.Spider
+        conditions: huntingLv1
+      ok:
+        text: "D'accord, c'est comprit!"
