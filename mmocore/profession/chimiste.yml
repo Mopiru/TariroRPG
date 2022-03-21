@@ -1,0 +1,7 @@
+name: Chimiste
+
+experience:
+    base: 10
+    per-level: 10
+
+exp-curve: levels
