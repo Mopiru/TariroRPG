@@ -1,0 +1,54 @@
+
+# Attribute ID
+strength:
+    name: Force
+    max-points: 50
+    buff:
+        weapon_damage: 5
+
+magic:
+    name: Magie
+    max-points: 50
+    buff:
+        skill_damage: 5
+
+dexterity:
+    name: dexterité
+    max-points: 50
+    buff:
+        projectile_damage: 5
+vitality:
+    name: Vitalité
+    max-points: 50
+    buff:
+        max_health: 1%
+
+agility:
+    name: Agilité
+    max-points: 50
+    buff:
+        attack_speed: 0.5%
+
+speed:
+    name: Rapidité
+    max-point: 20
+    buff:
+        movement_speed: 0.05
+
+mana:
+    name: Méditation
+    max-point: 50
+    buff:
+        mana_regeneration: 0.5
+
+medic:
+    name: Soin
+    max-points: 50
+    buff:
+        health_regeneration: 0.25
+
+intelligence:
+    name: Intélligence
+    max-points: 50
+    buff:
+        cooldown_reduction: 1

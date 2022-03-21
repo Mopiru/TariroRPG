@@ -1,0 +1,156 @@
+
+# GUI display name
+name: Player Attributes
+
+# Number of slots in your inventory. Must be
+# between 9 and 54 and must be a multiple of 9.
+slots: 27
+
+items:
+    reallocate:
+        slots: [26]
+        function: reallocation
+        item: CAULDRON
+        name: '&aRéinitialiser les points caractère'
+        lore:
+        - ''
+        - 'Vous avez dépenser un total de &6{total}&7 points caractère.'
+        - '&7Click droit pour réinitialiser les points.'
+        - ''
+        - '&eCout: 1 point de reinitialisation caractère.'
+        - '&e◆ point de reinitialisation caractère: &6{points}'
+    strength:
+        slots: [3]
+        function: attribute_strength
+        name: '&a{name}'
+        item: GOLD_SWORD
+        lore: # {buffs} returns amount of buffs
+        - ''
+        - '&7Points dépensé: &6{spent}&7/&6{max}'
+        - '&7{name} actuel: &6&l{current}'
+        - ''
+        - '&8Pour chaque niveaux en plus:'
+        - '&7  +{buff_weapon_damage} Dégats d'arme (&a+{total_weapon_damage}&7)'
+        - ''
+        - '&eClick pour monter d'un niveaux pour 1 point caractère.'
+        - '&e◆ Nombre de point caractère : {attribute_points}'
+    magic:
+        slots: [4]
+        function: attribute_magic
+        name: '&a{name}'
+        item: WATTER_BOTTLE
+        lore: # {buffs} returns amount of buffs
+        - ''
+        - '&7Points dépensé: &6{spent}&7/&6{max}'
+        - '&7{name} actuel: &6&l{current}'
+        - ''
+        - '&8Pour chaque niveaux en plus:'
+        - '&7  +{buff_skill_damage} Dégats de compétence (&a+{total_skill_damage}&7)'
+        - ''
+        - '&eClick pour monter d'un niveaux pour 1 point caractère.'
+        - '&e◆ Nombre de point caractère : {attribute_points}'
+    dexterity:
+        slots: [5]
+        function: attribute_dexterity
+        name: '&a{name}'
+        item: APPLE
+        lore: # {buffs} returns amount of buffs
+        - ''
+        - '&7Points dépensé: &6{spent}&7/&6{max}'
+        - '&7{name} actuel: &6&l{current}'
+        - ''
+        - '&8Pour chaque niveaux en plus:'
+        - '&7  +{buff_projectile_damage} Dégats des projectiles (&a+{total_projectile_damage}&7)'
+        - ''
+        - '&eClick pour monter d'un niveaux pour 1 point caractère.'
+        - '&e◆ Nombre de point caractère : {attribute_points}'
+    vitality:
+        slots: [12]
+        function: attribute_vitality
+        name: '&a{name}'
+        item: RAW_BEEF
+        lore: # {buffs} returns amount of buffs
+        - ''
+        - '&7Points dépensé: &6{spent}&7/&6{max}'
+        - '&7{name} actuel: &6&l{current}'
+        - ''
+        - '&8Pour chaque niveaux en plus:'
+        - '&7  +{buff_max_health}% Vie maximum (&a+{total_max_health}%&7)'
+        - ''
+        - '&eClick pour monter d'un niveaux pour 1 point caractère.'
+        - '&e◆ Nombre de point caractère : {attribute_points}'
+    agility:
+        slots: [13]
+        function: attribute_agility
+        name: '&a{name}'
+        item: RAW_BEEF
+        lore: # {buffs} returns amount of buffs
+        - ''
+        - '&7Points dépensé: &6{spent}&7/&6{max}'
+        - '&7{name} actuel: &6&l{current}'
+        - ''
+        - '&8Pour chaque niveaux en plus:'
+        - '&7  +{buff_attack_speed}% Vitesse d'attaque(&a+{total_attack_speed}%&7)'
+        - ''
+        - '&eClick pour monter d'un niveaux pour 1 point caractère.'
+        - '&e◆ Nombre de point caractère : {attribute_points}'
+    speed:
+        slots: [14]
+        function: attribute_speed
+        name: '&a{name}'
+        item: RAW_BEEF
+        lore: # {buffs} returns amount of buffs
+        - ''
+        - '&7Points dépensé: &6{spent}&7/&6{max}'
+        - '&7{name} actuel: &6&l{current}'
+        - ''
+        - '&8Pour chaque niveaux en plus:'
+        - '&7  +{buff_movement_speed} Vitesse de déplacement (&a+{total_movement_speed}&7)'
+        - ''
+        - '&eClick pour monter d'un niveaux pour 1 point caractère.'
+        - '&e◆ Nombre de point caractère : {attribute_points}'
+    mana:
+        slots: [21]
+        function: attribute_mana
+        name: '&a{name}'
+        item: RAW_BEEF
+        lore: # {buffs} returns amount of buffs
+        - ''
+        - '&7Points dépensé: &6{spent}&7/&6{max}'
+        - '&7{name} actuel: &6&l{current}'
+        - ''
+        - '&8Pour chaque niveaux en plus:'
+        - '&7  +{buff_mana_regeneration}% Régeneration de mana (&a+{total_mana_regeneration}%&7)'
+        - ''
+        - '&eClick pour monter d'un niveaux pour 1 point caractère.'
+        - '&e◆ Nombre de point caractère : {attribute_points}'
+    medic:
+        slots: [22]
+        function: attribute_medic
+        name: '&a{name}'
+        item: RAW_BEEF
+        lore: # {buffs} returns amount of buffs
+        - ''
+        - '&7Points dépensé: &6{spent}&7/&6{max}'
+        - '&7{name} actuel: &6&l{current}'
+        - ''
+        - '&8Pour chaque niveaux en plus:'
+        - '&7  +{buff_health_regeneration}% Régeneration point de vie(&a+{total_health_regeneration}%&7)'
+        - ''
+        - '&eClick pour monter d'un niveaux pour 1 point caractère.'
+        - '&e◆ Nombre de point caractère : {attribute_points}'
+    intelligence:
+        slots: [23]
+        function: attribute_intelligence
+        name: '&a{name}'
+        item: RAW_BEEF
+        lore: # {buffs} returns amount of buffs
+        - ''
+        - '&7Points dépensé: &6{spent}&7/&6{max}'
+        - '&7{name} actuel: &6&l{current}'
+        - ''
+        - '&8Pour chaque niveaux en plus:'
+        - '&7  +{buff_cooldown_reduction}% Réduction des delais (&a+{total_cooldown_reduction}%&7)'
+        - ''
+        - '&eClick pour monter d'un niveaux pour 1 point caractère.'
+        - '&e◆ Nombre de point caractère : {attribute_points}'
