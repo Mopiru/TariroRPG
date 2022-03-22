@@ -17,6 +17,7 @@ dexterity:
     max-points: 50
     buff:
         projectile_damage: 5
+
 vitality:
     name: Vitalité
     max-points: 50

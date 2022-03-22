@@ -1,0 +1,137 @@
+display:
+    name: 'Archer'
+    lore:
+    - 'Les Archers sont intéligent'
+    - 'Aidés de leur arcs, ils sont hors de porté '
+    - 'de tout leur adversaires.'
+    attribute-lore:
+    - '&a+ &7Réduction de malus'
+    - '&a+ &7Dégat des projectiles'
+    - '&a+ &7Régénération point de vie'
+    - ''
+    - '&8&lBonne santé'
+    - '&7  Diminution des malus: &c5&7% (+&c1&7%)'
+    - ''
+    - '&8&lDégats'
+    - '&7  Dégat des projectiles &a15 &7(+&a5&7)'
+    - ''
+    - '&8&lSoin'
+    - '&7  Régénération des point de vies: &90.5 &7(+&90.5&7)'
+    item: BLAZE_POWDER
+
+# Must match an existing exp curve filename from the 'expcurves' folder
+exp-curve: levels
+
+# The maximum level players can reach
+max-level: 100
+
+
+# This is the default mana display options, however it is not mandatory
+# to have it in your class config file. Other classes do not have this
+# section and therefore have the default mana display options.
+#
+# 'char' is the character used to generate the mana bar as a message
+# 'color' are also the colors used to generate the mana bar
+# 'icon' is the icon display on the player action bar
+# 'name' is basically displayed everywhere
+mana:
+    char: ■
+    icon: '&9⭐'
+    color:
+        full: AQUA
+        half: BLUE
+        empty: WHITE
+    name: 'Mana'
+
+cast-particle:
+    particle: SPELL_INSTANT
+
+# Special resource regeneration: (when out of combat),
+# players can regen a set % of their maximum mana/missing mana.
+# This % can scale with the player level.
+# It also works with other player resources: health, stellium and stamina!
+resource:
+    mana:
+    
+        # Scales with max mana.
+        type: MAX
+        
+        # Regen from 3 to 10% of max mana every second
+        value:
+            base: 3
+            per-level: .1
+            max: 10
+        
+        # Only regen when out of combat.
+        off-combat: true
+
+options:
+    default: false
+    display: true
+    off-combat-health-regen: false
+    off-combat-mana-regen: false
+    off-combat-stamina-regen: false
+    off-combat-stellium-regen: false
+
+
+attributes:
+    projectile_damage:
+        base: 15
+        per-level: 5
+    speed_malus_reduction:
+        base: 5
+        per-level: 1
+    health_regeneration:
+        base: 0.5
+        per-level: 0.5
+
+
+skills:
+    FIRE_STORM:
+        level: 1
+        max-level: 30
+        
+        # Specific skill modifiers based on class.
+        # Arcane mage's fire storm may deal more damage
+        # than an apprentice mage's fire storm.
+        damage:
+            base: 5.0
+            per-level: 3.0
+        ignite:
+            base: 2.0
+            per-level: 0.1
+        mana:
+            base: 15.0
+            per-level: 2.0
+        cooldown:
+            base: 5.0
+            per-level: -0.1
+            max: 5.0
+            min: 1.0
+    POWER_MARK:
+        level: 3
+        max-level: 30
+    FIREBALL:
+        level: 5
+        max-level: 30
+    MINOR_HEALINGS:
+        level: 6
+        max-level: 30
+    ICE_SPIKES:
+        level: 8
+    AMBERS:
+        level: 9
+        max-level: 30
+    WEAKEN:
+        level: 10
+        max-level: 30
+    WARP:
+        level: 13
+        max-level: 30
+    GREATER_HEALINGS:
+        level: 15
+        max-level: 30
+
+# Experience sources for main class experience.
+main-exp-sources:
+- 'killmob{type=ZOMBIE;amount=1-3}'
