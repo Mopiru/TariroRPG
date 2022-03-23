@@ -1,0 +1,177 @@
+conversations:
+   Jack:
+      quester: Jack
+      first: dialog_2_1,dialog_2_0,dialog_1_1
+      NPC_options:
+         dialog_1_1:
+            text: |
+
+                  Bonjour %player% ! Comment puis-je vous aider?
+            pointer: dialog_1_1_1
+            conditions: '!finishedTag'
+         dialog_1_2:
+            text: |
+
+                  Votre niveau $professionName$ : %ph.mmocore_profession_$professionName$%
+                  Vous avez le choix entre les quêtes suivantes :
+            pointer: dialog_1_1_2,dialog_1_1_3,dialog_1_1_4,dialog_1_1_5,dialog_1_1_6,dialog_1_1_7,dialog_1_1_8,dialog_1_1_9,dialog_1_2_0
+         dialog_1_3:
+            text: |
+
+                  Niveau de quête &a0 - 10&r
+                  Récompense : &a$rewardCurrencyAmountLevel1$ Or | $rewardExperienceAmountLevel1$ Expérience professionnelle
+                  Objectif : &6Tuer les monstres de niveau 1 $mobkillAmount_level0-10$
+         dialog_1_4:
+            text: |
+
+                  Niveau de quête &a10 - 30&r
+                  Récompense : &a$rewardCurrencyAmountLevel2$ Or | $rewardExperienceAmountLevel2$ Expérience professionnelle
+                  Objectif : &6Tuer les monstres $mobkillAmount_level10-30$ niveau 2 et les monstres $mobkillAmount2_level10-30$ niveau 1
+         dialog_1_5:
+            text: |
+
+                  Niveau de quête &a30 - 50&r
+                  Récompense : &a$rewardCurrencyAmountLevel3$ Or | $rewardExperienceAmountLevel3$ Expérience professionnelle
+                  Objectif : &6Tuer les monstres $mobkillAmount_level30-50$ niveau 3 et les monstres $mobkillAmount2_level30-50$ niveau 2
+         dialog_1_6:
+            text: |
+
+                  Niveau de quête &a50 - 80&r
+                  Récompense : &a$rewardCurrencyAmountLevel4$ Or | $rewardExperienceAmountLevel4$ Expérience professionnelle
+                  Objectif : &6Tuer les monstres $mobkillAmount_level50-80$ de niveau 4 et les monstres $mobkillAmount2_level50-80$ de niveau 3
+         dialog_1_7:
+            text: |
+
+                  Niveau de quête &a80 - 100&r
+                  Récompense : &a$rewardCurrencyAmountLevel5$ Or | $rewardExperienceAmountLevel5$ Expérience professionnelle
+                  Objectif : &6Tuer les monstres $mobkillAmount_level80-100$ de niveau 5 et les monstres $mobkillAmount2_level80-100$ de niveau 4
+         dialog_1_8:
+            text: |
+
+                  À bientôt!
+         dialog_1_9:
+            text: |
+
+                  Bonne chance et reviens quand tu auras fini !
+
+                  &2Quête acceptée !&r
+         dialog_2_0:
+            text: |
+
+                  &4Vous avez déjà une quête en cours !
+                  &rTerminez la quête en cours pour accepter d'autres quêtes.
+            conditions: 'startedTag,!finishedTag'
+         dialog_2_1:
+            text: |
+
+                  Vous avez réussi! Bien joué.
+                  Récompense:
+            conditions: finishedTag
+            events: rewardPlayer,resetQuest
+      player_options:
+         dialog_1_1_1:
+            text: '&2Quêtes disponibles'
+            pointer: dialog_1_2
+         dialog_1_1_2:
+            text: '&2Niveau 0 - 10 | J'accepte'
+            pointer: dialog_1_3
+            events: mobkillObjAdd,startedTagAdd,journalAdd1
+         dialog_1_1_3:
+            text: '&2Niveau 10 - 30 | J'accepte'
+            conditions: level10orHigher
+            pointer: dialog_1_4
+            events: mobkillObjAdd1,mobkillObjAdd2,startedTagAdd,journalAdd2
+         dialog_1_1_4:
+            text: '&2Niveau 30 - 50 | J'accepte'
+            conditions: level30orHigher
+            pointer: dialog_1_5
+            events: mobkillObjAdd2,mobkillObjAdd3,startedTagAdd,journalAdd3
+         dialog_1_1_5:
+            text: '&2Niveau 50 - 80 | J'accepte'
+            conditions: level50orHigher
+            pointer: dialog_1_6
+            events: mobkillObjAdd3,mobkillObjAdd4,startedTagAdd,journalAdd4
+         dialog_1_1_6:
+            text: '&2Niveau 80 - 100 | J'accepte'
+            conditions: level80orHigher
+            pointer: dialog_1_7
+            events: mobkillObjAdd4,mobkillObjAdd5,startedTagAdd,journalAdd5
+         dialog_1_1_7:
+            text: '&4Niveau 10 - 30 | Niveau trop bas'
+            conditions: '!level10orHigher'
+            pointer: dialog_1_2
+         dialog_1_1_8:
+            text: '&4Niveau 30 - 50 | Niveau trop bas'
+            conditions: '!level30orHigher'
+            pointer: dialog_1_2
+         dialog_1_1_9:
+            text: '&4Niveau 50 - 80 | Niveau trop bas'
+            conditions: '!level50orHigher'
+            pointer: dialog_1_2
+         dialog_1_2_0:
+            text: '&4Niveau 80 - 100 | Niveau trop bas'
+            conditions: '!level80orHigher'
+            pointer: dialog_1_2
+
+events:
+   mobkillObjAdd: objective start mobkillObj
+   mobkillObjAdd1: objective start mobkillObj1
+   mobkillObjAdd2: objective start mobkillObj2
+   mobkillObjAdd3: objective start mobkillObj3
+   mobkillObjAdd4: objective start mobkillObj4
+   mobkillObjAdd5: objective start mobkillObj5
+   startedTagAdd: tag add startedTag
+   finishedLevel: run ^tag add finishedTag ^objective delete mobkillObj ^journal add step_6 ^journal update ^deletepoint mobkillsLevel conditions:hasEnoughKills
+   finishedLevel1: run ^point tag 1 ^tag add finishedTag1 ^objective delete mobkillObj1 ^deletepoint mobkillsLevel1 conditions:hasEnoughKills1
+   finishedLevel2: run ^point tag 1 ^tag add finishedTag2 ^objective delete mobkillObj2 ^deletepoint mobkillsLevel2 conditions:hasEnoughKills2
+   finishedLevel4: run ^point tag 1 ^tag add finishedTag1 ^objective delete mobkillObj3 ^deletepoint mobkillsLevel3 conditions:hasEnoughKills3
+   finishedLevel5: run ^point tag 1 ^tag add finishedTag2 ^objective delete mobkillObj4 ^deletepoint mobkillsLevel4 conditions:hasEnoughKills4
+   finishedLevel6: run ^point tag 1 ^tag add finishedTag1 ^objective delete mobkillObj5 ^deletepoint mobkillsLevel5 conditions:hasEnoughKills5
+   addPoint: run ^point mobkillsLevel 1 ^notify %point.mobkillsLevel.amount% von $mobkillAmount_level0-10$ der Stufe 1 getötet! io:bossbar sound:entity.experience_orb.pickup
+   addPoint1: run ^point mobkillsLevel1 1 ^notify %point.mobkillsLevel1.amount% von $mobkillAmount_level0-10$ der Stufe 1 getötet! io:bossbar sound:entity.experience_orb.pickup
+   addPoint2: run ^point mobkillsLevel2 1 ^notify %point.mobkillsLevel2.amount% von $mobkillAmount_level10-30$ der Stufe 2 getötet! io:bossbar sound:entity.experience_orb.pickup
+   addPoint3: run ^point mobkillsLevel3 1 ^notify %point.mobkillsLevel3.amount% von $mobkillAmount_level30-50$ der Stufe 3 getötet! io:bossbar sound:entity.experience_orb.pickup
+   addPoint4: run ^point mobkillsLevel4 1 ^notify %point.mobkillsLevel4.amount% von $mobkillAmount_level50-80$ der Stufe 4 getötet! io:bossbar sound:entity.experience_orb.pickup
+   addPoint5: run ^point mobkillsLevel5 1 ^notify %point.mobkillsLevel5.amount% von $mobkillAmount_level80-100$ der Stufe 5 getötet! io:bossbar sound:entity.experience_orb.pickup
+   resetQuest: run ^tag del startedTag,finishedTag ^journal delete step_1 ^journal delete step_2 ^journal delete step_3 ^journal delete step_4 ^journal delete step_5 ^journal delete step_6 ^journal update
+   rewardPlayer: run ^command mmocore admin exp give %player% $professionName$ $rewardExperienceAmountLevel1$ ^command eco give %player% $rewardCurrencyAmountLevel1$
+   finishedLevel3: folder finishedTagDel1And2,deletePointTag,notifyFinishedQuest,finishedTagAdd,journalAdd6 conditions:hasTags
+   finishedTagDel1And2: tag del finishedTag1,finishedTag2
+   deletePointTag: deletepoint tag
+   notifyFinishedQuest: notify &2Avancement de la quête !\n&6Le journal a été mis à jour. io:Title sound:entity.player.levelup
+   finishedTagAdd: tag add finishedTag
+   journalAdd1: run ^journal add step_1 ^journal update
+   journalAdd2: run ^journal add step_2 ^journal update
+   journalAdd3: run ^journal add step_3 ^journal update
+   journalAdd4: run ^journal add step_4 ^journal update
+   journalAdd5: run ^journal add step_5 ^journal update
+   journalAdd6: run ^journal add step_6 ^journal update
+   
+
+conditions:
+   startedTag: tag startedTag
+   finishedTag: tag finishedTag
+   finishedTag1: tag finishedTag1
+   finishedTag2: tag finishedTag2
+   level10orHigher: mmoprofession $professionName$ 10
+   level30orHigher: mmoprofession $professionName$ 30
+   level50orHigher: mmoprofession $professionName$ 50
+   level80orHigher: mmoprofession $professionName$ 80
+   hasEnoughKills: point mobkillsLevel $mobkillAmount_level0-10$
+   hasEnoughKills1: point mobkillsLevel1 $mobkillAmount_level0-10$
+   hasEnoughKills2: point mobkillsLevel2 $mobkillAmount_level10-30$
+   hasEnoughKills3: point mobkillsLevel3 $mobkillAmount_level30-50$
+   hasEnoughKills4: point mobkillsLevel4 $mobkillAmount_level50-80$
+   hasEnoughKills5: point mobkillsLevel5 $mobkillAmount_level80-100$
+   hasTags: point tag 2
+
+objectives:
+   mobkillObj: mmobkill $mythicmobsList2$ persistent amount:1 minLevel:1 maxLevel:1 neutralDeathRadiusAllPlayers events:addPoint,finishedLevel
+   mobkillObj1: mmobkill $mythicmobsList$ persistent amount:1 minLevel:1 maxLevel:1 neutralDeathRadiusAllPlayers events:addPoint1,finishedLevel1,finishedLevel3
+   mobkillObj2: mmobkill $mythicmobsList2$ persistent amount:1 minLevel:1 maxLevel:1 neutralDeathRadiusAllPlayers events:addPoint2,finishedLevel2,finishedLevel3
+   mobkillObj3: mmobkill $mythicmobsList$ persistent amount:1 minLevel:1 maxLevel:1 neutralDeathRadiusAllPlayers events:addPoint3,finishedLevel4,finishedLevel3
+   mobkillObj4: mmobkill $mythicmobsList2$ persistent amount:1 minLevel:1 maxLevel:1 neutralDeathRadiusAllPlayers events:addPoint4,finishedLevel5,finishedLevel3
+   mobkillObj5: mmobkill $mythicmobsList$ persistent amount:1 minLevel:1 maxLevel:1 neutralDeathRadiusAllPlayers events:addPoint5,finishedLevel6,finishedLevel3
+   
+   
+
