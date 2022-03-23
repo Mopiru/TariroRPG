@@ -1,0 +1,63 @@
+# -- Journal Main Page Setting -- #
+journal_main_page:
+    can_started:
+        priority: 4
+        text: '  $default.journal_status_1$$quest_name$'
+        conditions: '!startedTag'
+    started:
+        priority: 3
+        text: '  $default.journal_status_2$$quest_name$'
+        conditions: 'startedTag'
+
+# -- Here goes the different steps of the quest in the Journal -- #
+
+journal:
+  step_1: >-
+      $journal_headline$
+       
+      Tâche:
+        &6Tuez des monstres $mobkillAmount_level0-10$ de niveau 1.&0
+
+      Récompense:
+        &2$rewardCurrencyAmountLevel1$ Or + $rewardExperienceAmountLevel1$ Expérience professionnelle&0
+  step_2: >-
+      $journal_headline$
+       
+      Tâche:
+        &6Tuez des monstres $mobkillAmount_level10-30$ de niveau 2 et des monstres $mobkillAmount_level0-10$ de niveau 1.&0
+
+      Récompense:
+        &2$rewardCurrencyAmountLevel2$ Or + $rewardExperienceAmountLevel2$ Expérience professionnelle&0
+  step_3: >-
+      $journal_headline$
+       
+      Tâche:
+        &6Tuez des monstres $mobkillAmount_level30-50$ de niveau 3 et des monstres $mobkillAmount_level10-30$ de niveau 2.&0
+
+      Récompense:
+        &2$rewardCurrencyAmountLevel3$ Or + $rewardExperienceAmountLevel3$ Expérience professionnelle&0
+  step_4: >-
+      $journal_headline$
+       
+      Tâche:
+        &6Tuez des monstres $mobkillAmount_level50-80$ de niveau 4 et des monstres $mobkillAmount_level30-50$ de niveau 3.&0
+
+      Récompense:
+        &2$rewardCurrencyAmountLevel4$ Gold + $rewardExperienceAmountLevel4$ Expérience professionnelle&0
+  step_5: >-
+      $journal_headline$
+       
+      Tâche:
+        &6Tuez des monstres $mobkillAmount_level80-100$ de niveau 5 et des monstres $mobkillAmount_level50-80$ de niveau 4.&0
+
+      Récompense:
+        &2$rewardCurrencyAmountLevel5$ Gold + $rewardExperienceAmountLevel5$ Expérience professionnelle&0
+  step_6: >-
+      $journal_headline$
+       
+      Tâche : &2Terminée !&0
+       
+      Retournez voir le chasseur pour récupérer votre récompense.
+
+
+
