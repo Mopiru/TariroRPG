@@ -1,0 +1,39 @@
+# -- CHANGE NPC ID HERE -- #
+npcs:
+  '0': Jack
+
+# -- CHANGE VARIABLES HERE -- #
+variables:
+  quester_name: 'Jack'
+  quest_name: 'Chasseur'
+  professionName: 'mining'
+  mythicmobsList: 'CAVE_SPIDER,SkeletalKnight'
+  mythicmobsList2: 'SkeletalMinion'
+  # -- First Amounts -- #
+  mobkillAmount_level0-10: '10'
+  mobkillAmount_level10-30: '20'
+  mobkillAmount_level30-50: '30'
+  mobkillAmount_level50-80: '30'
+  mobkillAmount_level80-100: '30'
+  # -- Second Amounts -- #
+  mobkillAmount2_level10-30: '10'
+  mobkillAmount2_level30-50: '20'
+  mobkillAmount2_level50-80: '30'
+  mobkillAmount2_level80-100: '30'
+  # -- Reward Currency Amounts -- #
+  rewardCurrencyAmountLevel1: '100'
+  rewardCurrencyAmountLevel2: '200'
+  rewardCurrencyAmountLevel3: '300'
+  rewardCurrencyAmountLevel4: '400'
+  rewardCurrencyAmountLevel5: '500'
+  # -- Reward Job Experience Amount -- #
+  rewardExperienceAmountLevel1: '100'
+  rewardExperienceAmountLevel2: '200'
+  rewardExperienceAmountLevel3: '300'
+  rewardExperienceAmountLevel4: '400'
+  rewardExperienceAmountLevel5: '500'
+
+
+
+
+  journal_headline: $default.journal_head_prefix$$quest_name$$default.journal_head_suffix$
