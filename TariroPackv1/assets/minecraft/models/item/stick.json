@@ -1,0 +1,12 @@
+{
+    "parent": "item/handheld",
+    "textures": {
+        "layer0": "item/sticks"
+    },
+    "overrides": [
+        { "predicate": {"custom_model_data": 2}, "model": "tariro:item/basic_wand"},
+        { "predicate": {"custom_model_data": 3}, "model": "tariro:item/commun_wand"},
+        { "predicate": {"custom_model_data": 4}, "model": "tariro:item/rare_wand"},
+        { "predicate": {"custom_model_data": 5}, "model": "tariro:item/epic_wand"}
+    ]
+}
